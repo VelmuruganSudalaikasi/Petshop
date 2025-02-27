@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.treasuremount.petshop.DTO.UserDTO;
+import com.treasuremount.petshop.DTO.UserDetailsDTO;
 import com.treasuremount.petshop.Entity.User;
 import com.treasuremount.petshop.Entity.Vendor;
 import com.treasuremount.petshop.ExceptionHandler.DuplicateUserException;
@@ -94,6 +95,18 @@ public class UserController {
             return ResponseEntity.ok().build();
         } catch (Exception ex) {
             return ResponseEntity.noContent().build();
+        }
+    }
+
+
+    @GetMapping("/getOne/userDetails/{id}")
+    public ResponseEntity<UserDetailsDTO> getUserDetails(@PathVariable Long id) {
+        User user = service.getOneUserById(id);
+        if (user != null) {
+            UserDetailsDTO responseDTO = entityDtoMapper.userDetailsToDTO(user);
+            return new ResponseEntity<>(responseDTO, HttpStatus.OK);
+        } else {
+            return ResponseEntity.notFound().build();
         }
     }
 

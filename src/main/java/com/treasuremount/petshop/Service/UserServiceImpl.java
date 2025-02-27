@@ -103,7 +103,8 @@ public class UserServiceImpl implements  UserService {
 
     private void veterinarianRegistrationEmail(String vetEmail, String vetName) {
         String subject = "Welcome to "+application_name+", Veterinarian!";
-        String body = "Dear Dr. " + vetName + ",\n\n" +
+        String body =
+                "Dear Dr. " + vetName + ",\n\n" +
                 "Thank you for registering as a veterinarian at "+application_name+". We are excited to have you as part of our team.\n\n" +
                 "You can now start offering consultations and check-ups for pets. If you need any assistance, feel free to reach out to our support team.\n\n" +
                 "Best regards,\nThe "+application_name+" Team\n\n" +
@@ -123,12 +124,6 @@ public class UserServiceImpl implements  UserService {
     }
 
 
-
-    public void throwValidMessage(String existing,String current,String message){
-        if(existing.equals(current)) {
-            throw  new DuplicateUserException(message);
-        }
-    }
 
 	@Override
 	public List<User> getAll() {

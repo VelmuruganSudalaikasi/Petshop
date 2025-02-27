@@ -40,6 +40,11 @@ public class Mapper {
         return modelMapper.map(user, UserDTO.class);
     }
 
+    public UserDetailsDTO userDetailsToDTO(User user) {
+
+        return modelMapper.map(user, UserDetailsDTO.class);
+    }
+
     public LoginResDTO toDTO(Map<String,Object> response, String token) {
 
         LoginResDTO dto=modelMapper.map(response, LoginResDTO.class);

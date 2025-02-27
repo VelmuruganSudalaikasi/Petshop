@@ -1,9 +1,93 @@
 
 
 1. Product  -> getting the user information via userId
-2. Phone Number is Already there means I throw the Phone Number is already there
-3. Email Id  is Already there means I throw the Email Id  is already there
-4. doctor Dashboard is added
+2. Phone Number is Already there means I throw the Phone Number is already there  -> reverted
+3. Email Id  is Already there means I throw the Email Id  is already there -> reverted
+4. doctor Dashboard is added      reverted
 5. fix the filter issue in the doctor appointment
+
+doctor module backend :
+   Dashboard
+   Payment flow for the appointments
+
+
+
+doctor module front-end:
+       getOne fetch the userDetails
+       Remove the delete button on that
+       Need to approve for the cancel
+
+
+User Management:
+
+
+  front-end :
+       Adding the hyper link to Order -> User
+       Adding the hyper link to User -> Order
+
+
+
+Veterinarian Management :
+     Backend :
+           need to throw the specific Error messages
+           paymentPageForDoctor
+           Need to add payment field to doctor
+
+  Order Management :
+       General :
+           refers the document
+
+  Vendor Management:
+
+       Features:
+             refers the docs highlighted in the blue
+             TreasureMount platform charges
+              filed in percentage for each vendor
+              deducted the payment while paying and sent to vendor
+              collect bank-details for making the payment
+
+              Vendor needs to have relationship to orders and payment
+              In the Vendor grid, it should provide a summary of the Products, orders and payment that TreasureMount has to pay for vendor
+
+
+         Front-End:
+          Need approval for new vendor
+
+  Product Management :
+
+
+
+          Front-End :
+            Product Management Product Management
+           Hyper link (Vendor contact information) for product approval
+           Adding provision Date (dateAdded-curDate)
+
+
+Sub-category :
+  Backend:
+           adding the condition to only active Sub-category
+
+Category :
+         Front-end :
+               Need to page for adding the category
+
+
+Homepage:
+        Front-end :
+               Needs to hyper link for banner to homepageBanner
+
+
+Dashboard :
+           front end :
+         hyper link   for widgets to details
+
+
+Complete the payment flow for the doctor
+
+
+
+
+
+
 
 

@@ -22,10 +22,10 @@ public class User {
     @Column(name = "lastName")
     private String lastName;
 
-    @Column(name = "emailId", nullable = false, length = 128)
+    @Column(name = "emailId", nullable = false, length = 255,unique = true)
     private String emailId;
 
-    @Column(name = "mobileNumber", nullable = false)
+    @Column(name = "mobileNumber", nullable = false,unique = true)
     private String mobileNumber;
 
     @Column(name = "password", length = 256)

@@ -20,12 +20,17 @@ public interface SubCategoryRepository extends JpaRepository<SubCategory, Long> 
             "FROM SubCategory s " +
             "JOIN Category c ON s.categoryId = c.id " +
             "WHERE (:categoryId IS NULL OR 0=:categoryId)" +
-            " OR (s.categoryId=:categoryId)")
+            " OR (s.categoryId=:categoryId)" +
+            "AND s.activeStatus=true")
     List<SubCategoryInfoImageDTO> getAllSubCategory(@Param("categoryId") Long categoryId);
 
     @Query("SELECT new com.treasuremount.petshop.DTO.SubCategoryInfoImageDTO(s.id, s.name, s.categoryId, c.name, s.activeStatus,s.imageUrl) " +
             "FROM SubCategory s " +
-            "JOIN Category c ON s.categoryId = c.id")
+            "JOIN Category c ON s.categoryId = c.id " +
+            "WHERE s.activeStatus=true"
+
+
+            )
     List<SubCategoryInfoImageDTO> findAllWithCategoryName();
 
 

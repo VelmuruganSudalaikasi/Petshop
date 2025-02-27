@@ -153,14 +153,9 @@ public class DashBoardService {
             Map<LocalDate, Map<String, Map<String, Object>>> groupedData = new HashMap<>();
 
             for (Object[] obj : response) {
-
-
                 LocalDate date = ((java.sql.Date) obj[2]).toLocalDate();
                 Long count = (Long) obj[0];
                 String status = (String) obj[1];
-                System.out.println("Date"+ date);
-                System.out.println("Count"+ count);
-                System.out.println("Status"+ status);
 
                 // Ensure the date entry exists
                 groupedData.putIfAbsent(date, new HashMap<>());
@@ -173,8 +168,6 @@ public class DashBoardService {
                 // Store count
                 countMap.put("Count", count);
             }
-
-            System.out.println(groupedData);
 
             // Convert groupedData to List<Map<String, Map<String, Map<String, Object>>>>
             for (Map.Entry<LocalDate, Map<String, Map<String, Object>>> entry : groupedData.entrySet()) {
